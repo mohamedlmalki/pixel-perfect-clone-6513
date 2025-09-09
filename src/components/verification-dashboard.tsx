@@ -8,7 +8,6 @@ import { Badge } from "@/components/ui/badge";
 import { Progress } from "@/components/ui/progress";
 import { Skeleton } from "@/components/ui/skeleton";
 import { LoadingSpinner } from "@/components/loading-spinner";
-import { FileUpload } from "@/components/file-upload";
 import { StatusBadge } from "@/components/status-badge";
 import { CheckCircle, Mail, Server, User, Globe, Shield, Clock, Download, Upload as UploadIcon } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -340,20 +339,11 @@ export function VerificationDashboard() {
                     />
                   </div>
                   
-                  <FileUpload
-                    onFileSelect={handleFileUpload}
-                    className="h-full"
-                  />
+                  
                 </div>
                 
                 <div className="flex flex-wrap gap-4">
-                  <Button 
-                    variant="outline" 
-                    className="bg-secondary/50 text-secondary-foreground border-border hover:bg-secondary hover:scale-105 transition-all duration-200"
-                  >
-                    <UploadIcon className="w-4 h-4 mr-2" />
-                    Upload CSV
-                  </Button>
+                  
                   <Button 
                     onClick={handleBulkVerification}
                     className="bg-primary text-primary-foreground hover:bg-primary-muted hover:scale-105 transition-all duration-200"
@@ -361,13 +351,7 @@ export function VerificationDashboard() {
                     <CheckCircle className="w-4 h-4 mr-2" />
                     Start Verification
                   </Button>
-                  <Button 
-                    variant="outline" 
-                    className="bg-secondary/50 text-secondary-foreground border-border hover:bg-secondary hover:scale-105 transition-all duration-200"
-                  >
-                    <Download className="w-4 h-4 mr-2" />
-                    Export CSV
-                  </Button>
+                  
                 </div>
               </CardContent>
             </Card>

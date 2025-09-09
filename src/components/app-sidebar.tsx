@@ -65,42 +65,7 @@ export function AppSidebar() {
           </div>
         </div>
 
-        {/* Enhanced Navigation */}
-        <SidebarGroup className="px-3">
-          <SidebarGroupLabel className="text-sidebar-foreground/60 text-sm font-medium mb-3 px-3">
-            {state === "expanded" ? "Navigation" : "Nav"}
-          </SidebarGroupLabel>
-          <SidebarGroupContent>
-            <SidebarMenu className="space-y-2">
-              {navItems.map((item, index) => {
-                const active = isActive(item.url);
-                return (
-                  <SidebarMenuItem key={item.title}>
-                    <SidebarMenuButton asChild className="w-full justify-start p-0">
-                      <NavLink 
-                        to={item.url} 
-                        end 
-                        className={cn(
-                          "flex items-center gap-3 px-3 py-3 rounded-xl transition-all duration-200 relative group",
-                          getNavCls({ isActive: active }),
-                          "hover:scale-[1.02] hover:shadow-md"
-                        )}
-                      >
-                        <item.icon className="w-5 h-5 flex-shrink-0" />
-                        {state === "expanded" && (
-                          <span className="font-medium animate-fade-in">{item.title}</span>
-                        )}
-                        {active && (
-                          <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-transparent rounded-xl animate-pulse-glow" />
-                        )}
-                      </NavLink>
-                    </SidebarMenuButton>
-                  </SidebarMenuItem>
-                );
-              })}
-            </SidebarMenu>
-          </SidebarGroupContent>
-        </SidebarGroup>
+        
 
         {/* Enhanced Account Section */}
         <SidebarGroup className="px-3">

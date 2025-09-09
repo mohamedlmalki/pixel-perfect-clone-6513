@@ -157,33 +157,6 @@ export function AppSidebar() {
           </SidebarGroupContent>
         </SidebarGroup>
 
-        {/* Enhanced Recent Users */}
-        {state === "expanded" && (
-          <SidebarGroup className="px-3 animate-fade-in">
-            <SidebarGroupLabel className="text-sidebar-foreground/60 text-sm font-medium mb-3 px-3">
-              Recent Users
-            </SidebarGroupLabel>
-            <SidebarGroupContent>
-              <div className="flex space-x-2 px-1">
-                {recentUsers.map((user, index) => (
-                  <Avatar 
-                    key={user.id} 
-                    className={cn(
-                      "w-8 h-8 border-2 border-sidebar-border/30 transition-all duration-300 hover:scale-110 hover:shadow-lg cursor-pointer",
-                      "animate-bounce-in"
-                    )}
-                    style={{ animationDelay: `${index * 100}ms` }}
-                  >
-                    <AvatarImage src={user.avatar} />
-                    <AvatarFallback className="bg-gradient-to-br from-primary/80 to-primary-muted text-primary-foreground text-xs font-medium">
-                      {user.name.charAt(0)}
-                    </AvatarFallback>
-                  </Avatar>
-                ))}
-              </div>
-            </SidebarGroupContent>
-          </SidebarGroup>
-        )}
 
         {/* Floating Action Button for Collapsed State */}
         {state === "collapsed" && (
